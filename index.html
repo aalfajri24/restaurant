@@ -1778,7 +1778,7 @@ function addToCart(id) {
   if (existing) existing.qty += 1;
   else cart.push({ ...menu, qty: 1 });
   updateCart();
-  showToast(`${menu.name} ditambahkan 🎉`);
+  showToast(`${menu.name} ditambahkan `);
 }
 
 function changeQty(id, delta) {
