@@ -190,7 +190,7 @@ section { position: relative; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://unsplash.com/photos/RMcIUWWXDB4/download?force=true&w=1800');
+  background-image: url('hero.jpg');
   background-size: cover;
   background-position: center;
   filter: brightness(0.42) saturate(0.9);
@@ -593,6 +593,7 @@ section { position: relative; }
   object-fit: cover;
   transition: transform .8s var(--ease);
 }
+img[src="klepon.jpg"] { object-position: center 85%; }
 .menu-card:hover .card-media img { transform: scale(1.08); }
 .card-media::after {
   content: '';
@@ -1351,10 +1352,10 @@ section { position: relative; }
     <div class="story-grid">
       <div class="story-visual reveal">
         <div class="story-img-main">
-          <img src="https://unsplash.com/photos/-Iv3T9bCIK0/download?force=true&w=900" alt="Rendang daging dimasak tradisional" loading="lazy" />
+          <img src="rendang.jpg" alt="Rendang daging dimasak tradisional" loading="lazy" />
         </div>
         <div class="story-img-small">
-          <img src="https://unsplash.com/photos/STEYOO-l0mQ/download?force=true&w=600" alt="Memasak dengan cara tradisional" loading="lazy" />
+          <img src="gudeg.jpg" alt="Memasak dengan cara tradisional" loading="lazy" />
         </div>
       </div>
       <div class="story-content reveal">
@@ -1400,8 +1401,8 @@ section { position: relative; }
       <p class="section-sub">Suasana, aroma, dan cerita yang membungkus setiap hidangan.</p>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item g1 reveal" data-caption="Dapur terbuka — tempat rendang dimasak perlahan">
-        <img src="https://unsplash.com/photos/RMcIUWWXDB4/download?force=true&w=1200" alt="Hidangan Indonesia di meja kayu" loading="lazy" />
+      <div class="gallery-item g1 reveal" data-caption="Dapur — tempat rendang dimasak perlahan">
+        <img src="dapur.jpg" alt="Hidangan Indonesia di meja kayu" loading="lazy" />
       </div>
       <div class="gallery-item g2 reveal" data-caption="Interior kayu jati — Yogyakarta">
         <img src="https://unsplash.com/photos/2po9ugcutDk/download?force=true&w=900" alt="Interior restoran kayu" loading="lazy" />
@@ -1410,7 +1411,7 @@ section { position: relative; }
         <img src="https://unsplash.com/photos/RbmBS-yF4MY/download?force=true&w=900" alt="Motif batik tradisional" loading="lazy" />
       </div>
       <div class="gallery-item g4 reveal" data-caption="Kopi luwak — biji pilihan dari Bali">
-        <img src="https://unsplash.com/photos/rAbxfPj_nvo/download?force=true&w=700" alt="Biji kopi luwak" loading="lazy" />
+        <img src="coffee.jpg" alt="Kopi" loading="lazy" />
       </div>
       <div class="gallery-item g5 reveal" data-caption="Nasi padang — hidangan penuh warna">
         <img src="https://unsplash.com/photos/bPOlDK_2_94/download?force=true&w=700" alt="Nasi padang" loading="lazy" />
@@ -1650,30 +1651,30 @@ section { position: relative; }
    IMAGE SOURCES
    ============================================================ */
 const U = (id, w = 800) => `https://unsplash.com/photos/${id}/download?force=true&w=${w}`;
-const P = (id, w = 800) => `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
+const PX = (id, w = 800) => `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
 
 /* ============================================================
    DATA MENU
    ============================================================ */
 const menuData = [
-  { id:1,  name:'Rendang Daging',       origin:'Padang',      price:65000, category:'main',    image:U('-Iv3T9bCIK0'),   spicy:4, desc:'Daging sapi empuk dimasak delapan jam dengan 21 jenis rempah pilihan, disajikan dengan nasi hangat dan daun singkong.' },
-  { id:2,  name:'Sate Ayam Madura',     origin:'Madura',      price:45000, category:'main',    image:P(37338567),        spicy:2, desc:'Sate ayam bakar arang dengan bumbu kacang legit, kecap manis, dan irisan bawang merah segar.' },
-  { id:3,  name:'Gudeg Jogja',          origin:'Yogyakarta',  price:40000, category:'main',    image:U('bPOlDK_2_94'),   spicy:1, desc:'Nangka muda manis gurih dengan areh, opor ayam, dan sambal krecek yang menggugah selera.' },
-  { id:4,  name:'Nasi Goreng Kampung',  origin:'Nasional',    price:35000, category:'main',    image:P(15681167),        spicy:2, desc:'Nasi goreng dengan terasi, ikan asin, dan telur mata sapi. Aroma smoky dari wok besi.' },
-  { id:5,  name:'Soto Betawi',          origin:'Jakarta',     price:45000, category:'main',    image:P(37193497),        spicy:1, desc:'Soto daging kuah santan gurih dengan emping, acar segar, dan perasan jeruk limau.' },
-  { id:6,  name:'Rawon Surabaya',       origin:'Surabaya',    price:50000, category:'main',    image:U('RMcIUWWXDB4'),   spicy:2, desc:'Sup daging hitam dari kluwek, disajikan dengan tauge, sambal, dan telur asin.' },
-  { id:7,  name:'Bakso Solo Jumbo',     origin:'Solo',        price:30000, category:'main',    image:P(15853313),        spicy:1, desc:'Bakso sapi besar berisi daging, kuah kaldu bening gurih, mie kuning, dan seledri.' },
-  { id:8,  name:'Gado-Gado Siram',      origin:'Jakarta',     price:32000, category:'main',    image:P(37097888),        spicy:2, desc:'Salad sayur rebus dengan bumbu kacang legit, tahu, tempe, telur, dan kerupuk.' },
-  { id:9,  name:'Martabak Bangka',      origin:'Bangka',      price:55000, category:'snack',   image:P(37240958),        spicy:0, desc:'Martabak tebal isi cokelat, keju, dan susu kental manis. Renyah di luar, lembut di dalam.' },
-  { id:10, name:'Pisang Goreng Crispy', origin:'Nasional',    price:20000, category:'snack',   image:U('STEYOO-l0mQ'),   spicy:0, desc:'Pisang kepok goreng renyah dengan balutan tepung beras, teman terbaik kopi sore.' },
-  { id:11, name:'Tahu Isi Pedas',       origin:'Nasional',    price:15000, category:'snack',   image:P(37338567),        spicy:3, desc:'Tahu goreng isi sayur dengan cocolan sambal kecap pedas dan cabai rawit utuh.' },
-  { id:12, name:'Es Cendol Dawet',      origin:'Nasional',    price:25000, category:'dessert', image:U('r5taqAzaflw'),   spicy:0, desc:'Cendol hijau pandan, santan segar, gula aren cair, dan es serut yang menyegarkan.' },
-  { id:13, name:'Klepon Gula Aren',     origin:'Jawa',        price:18000, category:'dessert', image:P(37222830),        spicy:0, desc:'Bola ketan isi gula aren lumer, dibalur kelapa parut. Manis alami dan legit.' },
-  { id:14, name:'Kolak Pisang',         origin:'Nasional',    price:20000, category:'dessert', image:U('RMcIUWWXDB4'),   spicy:0, desc:'Pisang, ubi, dan kolang-kaling dalam kuah santan gula aren yang hangat.' },
-  { id:15, name:'Kopi Luwak Bali',      origin:'Bali',        price:80000, category:'drink',   image:U('rAbxfPj_nvo'),   spicy:0, desc:'Kopi premium dari biji pilihan, diseduh perlahan dengan cara tradisional Bali.' },
-  { id:16, name:'Es Kelapa Muda',       origin:'Nasional',    price:20000, category:'drink',   image:U('r5taqAzaflw'),   spicy:0, desc:'Air kelapa segar dengan daging muda, es batu, dan sedikit gula batu.' },
-  { id:17, name:'Es Teh Manis',         origin:'Nasional',    price:10000, category:'drink',   image:P(15681167),        spicy:0, desc:'Teh tubruk dengan gula batu, disajikan dingin dengan irisan lemon.' },
-  { id:18, name:'Wedang Jahe',          origin:'Jawa',        price:15000, category:'drink',   image:U('rAbxfPj_nvo'),   spicy:0, desc:'Jahe bakar, serai, dan gula aren — hangat, menyehatkan, dan menenangkan.' }
+  { id:1,  name:'Rendang Daging',       origin:'Padang',      price:15000, category:'main',    image:'rendang.jpg',       spicy:4, desc:'Daging sapi empuk dimasak delapan jam dengan 21 jenis rempah pilihan, disajikan dengan nasi hangat dan daun singkong.' },
+  { id:2,  name:'Sate Ayam Madura',     origin:'Madura',      price:20000, category:'main',    image:'sateayam.jpg',     spicy:2, desc:'Sate ayam bakar arang dengan bumbu kacang legit, kecap manis, dan irisan bawang merah segar.' },
+  { id:3,  name:'Gudeg Jogja',          origin:'Yogyakarta',  price:10000, category:'main',    image:'gudeg.jpg',        spicy:1, desc:'Nangka muda manis gurih dengan areh, opor ayam, dan sambal krecek yang menggugah selera.' },
+  { id:4,  name:'Nasi Goreng Kampung',  origin:'Nasional',    price:15000, category:'main',    image:'nasgor.jpg',       spicy:2, desc:'Nasi goreng dengan terasi, ikan asin, dan telur mata sapi. Aroma smoky dari wok besi.' },
+  { id:5,  name:'Soto Betawi',          origin:'Jakarta',     price:15000, category:'main',    image:'soto.jpg',        spicy:1, desc:'Soto daging kuah santan gurih dengan emping, acar segar, dan perasan jeruk limau.' },
+  { id:6,  name:'Rawon Surabaya',       origin:'Surabaya',    price:20000, category:'main',    image:'rawon.jpg',        spicy:2, desc:'Sup daging hitam dari kluwek, disajikan dengan tauge, sambal, dan telur asin.' },
+  { id:7,  name:'Bakso Solo Jumbo',     origin:'Solo',        price:25000, category:'main',    image:'bakso.jpg',        spicy:1, desc:'Bakso sapi besar berisi daging, kuah kaldu bening gurih, mie kuning, dan seledri.' },
+  { id:8,  name:'Gado-Gado',            origin:'Jakarta',     price:25000, category:'main',    image:'gado-gado.jpg',    spicy:2, desc:'Salad sayur rebus dengan bumbu kacang legit, tahu, tempe, telur, dan kerupuk.' },
+  { id:9,  name:'Martabak Bangka',      origin:'Bangka',      price:17000, category:'snack',   image:'martabak.jpg',     spicy:0, desc:'Martabak tebal isi cokelat, keju, dan susu kental manis. Renyah di luar, lembut di dalam.' },
+  { id:10, name:'Pisang Goreng Crispy', origin:'Nasional',    price:5000, category:'snack',   image:'pisang.jpg',       spicy:0, desc:'Pisang kepok goreng renyah dengan balutan tepung beras, teman terbaik kopi sore.' },
+  { id:11, name:'Tahu Isi Pedas',       origin:'Nasional',    price:10000, category:'snack',   image:'tahu.jpg',          spicy:3, desc:'Tahu goreng isi sayur dengan cocolan sambal kecap pedas dan cabai rawit utuh.' },
+  { id:12, name:'Es Cendol Dawet',      origin:'Nasional',    price:7000, category:'dessert', image:'cendol.jpg',       spicy:0, desc:'Cendol hijau pandan, santan segar, gula aren cair, dan es serut yang menyegarkan.' },
+  { id:13, name:'Klepon Gula Aren',     origin:'Jawa',        price:1000, category:'dessert', image:'klepon.jpg',        spicy:0, desc:'Bola ketan isi gula aren lumer, dibalur kelapa parut. Manis alami dan legit.' },
+  { id:14, name:'Kolak Pisang',         origin:'Nasional',    price:8000, category:'dessert', image:'kolak.jpg',         spicy:0, desc:'Pisang, ubi, dan kolang-kaling dalam kuah santan gula aren yang hangat.' },
+  { id:15, name:'Kopi Luwak Bali',      origin:'Bali',        price:10000, category:'drink',   image:'coffee.jpg',  spicy:0, desc:'Kopi premium dari biji pilihan, diseduh perlahan dengan cara tradisional Bali.' },
+  { id:16, name:'Es Kelapa Muda',       origin:'Nasional',    price:10000, category:'drink',   image:'ice coconut.jpg',  spicy:0, desc:'Air kelapa segar dengan daging muda, es batu, dan sedikit gula batu.' },
+  { id:17, name:'Es Teh Manis',         origin:'Nasional',    price:10000, category:'drink',   image:'ice tea.jpg',        spicy:0, desc:'Teh tubruk dengan gula batu, disajikan dingin dengan irisan lemon.' },
+  { id:18, name:'Wedang Jahe',          origin:'Jawa',        price:15000, category:'drink',   image:'wedang jahe.jpg',   spicy:0, desc:'Jahe bakar, serai, dan gula aren — hangat, menyehatkan, dan menenangkan.' }
 ];
 
 /* ============================================================
@@ -1778,7 +1779,7 @@ function addToCart(id) {
   if (existing) existing.qty += 1;
   else cart.push({ ...menu, qty: 1 });
   updateCart();
-  showToast(`${menu.name} ditambahkan `);
+  showToast(`${menu.name} ditambahkan 🎉`);
 }
 
 function changeQty(id, delta) {
@@ -1831,7 +1832,7 @@ function updateCart() {
 }
 
 $('#checkoutBtn').addEventListener('click', () => {
-  if (cart.length === 0) { showToast('Keranjang masih kosong '); return; }
+  if (cart.length === 0) { showToast('Keranjang masih kosong 🙈'); return; }
   const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
   const lines = cart.map(i => `• ${i.name} x${i.qty} — ${formatPrice(i.price * i.qty)}`).join('\n');
   const msg = `Halo Rasa Nusantara! Saya ingin memesan:\n\n${lines}\n\nTotal: ${formatPrice(total)}`;
@@ -1877,7 +1878,7 @@ $('#modalAdd').addEventListener('click', () => {
    ============================================================ */
 $('#resForm').addEventListener('submit', e => {
   e.preventDefault();
-  showToast('Reservasi terkirim! Kami akan konfirmasi via WhatsApp ');
+  showToast('Reservasi terkirim! Kami akan konfirmasi via WhatsApp ✨');
   e.target.reset();
 });
 
