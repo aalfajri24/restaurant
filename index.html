@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Rasa Nusantara — perjalanan rasa melintasi 17.000 pulau. Rendang, sate, gudeg, rawon, dan warisan kuliner Indonesia." />
+<meta name="description" content="Rasa Nusantara — perjalanan rasa melintasi 17.000 pulau. Rendang, sate, rawon, dan warisan kuliner Indonesia." />
 <title>Rasa Nusantara — Warisan Rasa Indonesia</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -441,17 +441,6 @@ section { position: relative; }
   transition: transform 1.2s var(--ease);
 }
 .story-visual:hover .story-img-main img { transform: scale(1.06); }
-.story-img-small {
-  position: absolute;
-  right: -32px; bottom: -40px;
-  width: 55%;
-  aspect-ratio: 1;
-  border-radius: var(--r-md);
-  overflow: hidden;
-  border: 6px solid var(--cream);
-  box-shadow: var(--shadow-md);
-}
-.story-img-small img { width: 100%; height: 100%; object-fit: cover; }
 .story-badge {
   position: absolute;
   top: 24px; left: -24px;
@@ -1292,7 +1281,6 @@ img[src="klepon.jpg"] { object-position: center 85%; }
   .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 200px; }
   .g1, .g2, .g3, .g4, .g5, .g6 { grid-column: span 1; }
   .story-badge { left: 0; }
-  .story-img-small { right: -10px; bottom: -20px; }
   .cart-drawer { max-width: 100%; }
 }
 </style>
@@ -1353,9 +1341,6 @@ img[src="klepon.jpg"] { object-position: center 85%; }
       <div class="story-visual reveal">
         <div class="story-img-main">
           <img src="rendang.jpg" alt="Rendang daging dimasak tradisional" loading="lazy" />
-        </div>
-        <div class="story-img-small">
-          <img src="Gudeg.jpg" alt="Memasak dengan cara tradisional" loading="lazy" />
         </div>
       </div>
       <div class="story-content reveal">
@@ -1659,7 +1644,6 @@ const PX = (id, w = 800) => `https://images.pexels.com/photos/${id}/pexels-photo
 const menuData = [
   { id:1,  name:'Rendang Daging',       origin:'Padang',      price:15000, category:'main',    image:'rendang.jpg',       spicy:4, desc:'Daging sapi empuk dimasak delapan jam dengan 21 jenis rempah pilihan, disajikan dengan nasi hangat dan daun singkong.' },
   { id:2,  name:'Sate Ayam Madura',     origin:'Madura',      price:20000, category:'main',    image:'sateayam.jpg',     spicy:2, desc:'Sate ayam bakar arang dengan bumbu kacang legit, kecap manis, dan irisan bawang merah segar.' },
-  { id:3,  name:'Gudeg Jogja',          origin:'Yogyakarta',  price:10000, category:'main',    image:'Gudeg.jpg',        spicy:1, desc:'Nangka muda manis gurih dengan areh, opor ayam, dan sambal krecek yang menggugah selera.' },
   { id:4,  name:'Nasi Goreng Kampung',  origin:'Nasional',    price:15000, category:'main',    image:'nasgor.jpg',       spicy:2, desc:'Nasi goreng dengan terasi, ikan asin, dan telur mata sapi. Aroma smoky dari wok besi.' },
   { id:5,  name:'Soto Betawi',          origin:'Jakarta',     price:15000, category:'main',    image:'soto.jpg',        spicy:1, desc:'Soto daging kuah santan gurih dengan emping, acar segar, dan perasan jeruk limau.' },
   { id:6,  name:'Rawon Surabaya',       origin:'Surabaya',    price:20000, category:'main',    image:'rawon.jpg',        spicy:2, desc:'Sup daging hitam dari kluwek, disajikan dengan tauge, sambal, dan telur asin.' },
